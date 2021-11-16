@@ -1,4 +1,4 @@
-import asyncio
+import asyncio, role
 from fastapi import FastAPI
 from fastapi.responses import RedirectResponse
 from requests.api import get
@@ -18,4 +18,5 @@ async def callback(code : str):
     cur.execute("INSERT INTO users VALUES (?, ?);", (profile["id"], exchange_res["refresh_token"]))
     con.commit()
     con.close()
+    role.add_role("서버아이디",profile["id"],"인증 역할 아이디")
     return RedirectResponse("https://discord.com/oauth2/authorized")
