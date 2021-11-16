@@ -1,4 +1,4 @@
-import discord, sqlite3, config
+import discord, sqlite3, config, role
 from module import opendb, refresh_token, add_user
 
 client = discord.Client()
