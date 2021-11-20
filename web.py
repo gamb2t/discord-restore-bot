@@ -1,4 +1,4 @@
-import asyncio, role
+import asyncio, role, config
 from fastapi import FastAPI
 from fastapi.responses import RedirectResponse
 from requests.api import get
